@@ -113,7 +113,7 @@ def decode_data(encoded_data):
     encoded_data = encoded_data.split("base64,")[1]
     decoded_data=base64.b64decode((encoded_data))
     file_bytes = np.asarray(bytearray(decoded_data), dtype=np.uint8)
-    img = cv2.imdecode(file_bytes, 0)
+    img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     encode = face_recognition.face_encodings(img)[0]
     return encode
