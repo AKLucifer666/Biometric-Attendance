@@ -1,5 +1,5 @@
-#Biometric-Attendance
-
+# Biometric-Attendance
+$${\color{red}Welcome \space \color{lightblue}To \space \color{green}Attendance Website}$$
 ## Installation
 1. Preferably use python3.8 and set up a virtual environment using the command:
 ```
@@ -16,6 +16,8 @@ source <venv name>/bin/activate
 pip3 install -r requirements.txt
 ```
 
+## Technologies Used
+
 ## Points to consider
 
 1. There's a case where the api key being used to access webcam.js through soundflare be expired. In such a scenario, replace it with a fresh API Key through this website https://cdnjs.com/libraries/webcamjs
@@ -29,16 +31,21 @@ pip3 install -r requirements.txt
 ### The Navbar is divided into four paths:
 
 ### Attendance
-This is the homepage of the website.
++ This is the homepage of the website.
 
 ### Mark Attendance
-This page accepts 3 parameters, **Roll No.**, **Password**, **Face**.
+
++ This page accepts 3 parameters, **Roll No.**, **Password**, **Face**.
 If the face and password to the corresponding roll number is correct, it then proceeds to a confirmation page which results in the marking of attendance on that date.
 
 ### Register Student
-This page is used to register a new student in the database.
++ This page is used to register a new student in the database.
 
 ### Track Attendance
-This page offers a dropdown of dates among which the user chooses one. All the present students on that date is displayed in a table.
++ This page offers a dropdown of dates among which the user chooses one. All the present students on that date is displayed in a table.
+
+## Demonstration:
+
+https://user-images.githubusercontent.com/97111211/230719839-2a3de5f7-e1a1-4178-b0c4-e7975915e0c4.mp4
 
 
