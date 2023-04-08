@@ -1,5 +1,5 @@
 # Biometric-Attendance
-$${\color{red}Welcome \space \color{lightblue}To \space \color{lightgreen}Attendance Website}$$
+$${\color{red}Welcome \space \color{lightblue}To \space \color{lightgreen}Biometric Attendance}$$
 ## Installation
 1. Preferably use python3.8 and set up a virtual environment using the command:
 ```
