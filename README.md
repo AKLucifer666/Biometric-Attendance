@@ -1,5 +1,5 @@
 # Biometric-Attendance
-$${\color{red}Welcome \space \color{lightblue}To \space \color{green}Attendance Website}$$
+$${\color{red}Welcome \space \color{lightblue}To \space \color{lightgreen}Attendance Website}$$
 ## Installation
 1. Preferably use python3.8 and set up a virtual environment using the command:
 ```
@@ -17,6 +17,11 @@ pip3 install -r requirements.txt
 ```
 
 ## Technologies Used
+
+1. Django inbuilt _sqlite3_ is used to store data and attendance of user.
+2. _Encrypted Password_ is stored in the students data table.
+3. _face_recognition_ and _openCV_ module is used for computer vision.
+4. Captured photo is being processed in the form of _base64_ with the help of _webcam.js library API_ being offered by _soundflare_ which is then decoded in python
 
 ## Points to consider
 
