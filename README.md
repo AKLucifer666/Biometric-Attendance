@@ -26,12 +26,19 @@ pip3 install -r requirements.txt
 
 ## Working
 
-## The Navbar is divided into four paths:
+### The Navbar is divided into four paths:
 
-## Attendance
+### Attendance
+This is the homepage of the website.
 
-## Mark Attendance
+### Mark Attendance
+This page accepts 3 parameters, **Roll No.**, **Password**, **Face**.
+If the face and password to the corresponding roll number is correct, it then proceeds to a confirmation page which results in the marking of attendance on that date.
 
-## Register Student
+### Register Student
+This page is used to register a new student in the database.
 
-## Track Attendance
+### Track Attendance
+This page offers a dropdown of dates among which the user chooses one. All the present students on that date is displayed in a table.
+
+
