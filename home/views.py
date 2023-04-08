@@ -84,6 +84,7 @@ def confirmAttendance(request):
     return render(request,"markAttendance.html")
 
 def registerStudent(request):
+    np.set_printoptions(suppress=True,formatter={'float_kind':'{:f}'.format})
     if request.method=="POST":
         data = studentsData.objects.all()
         name = request.POST.get("name")
