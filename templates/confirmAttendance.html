@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+Confirm
+{% endblock title %}
+
+
+{% block body %}
+<div class="bg-body-tertiary p-5 rounded">
+    <div class="col-sm-8 py-5 mx-auto">
+        <form method="post" action="/confirmAttendance">
+            {% csrf_token %}
+            <h2 class="display-5 fw-normal">Mark Attendance</h1>
+                <p class="fs-5">
+                    <b>Name: </b> {{name}}
+                    <input id="name" name="name" type="hidden" value={{name}} />
+                </p>
+                <p class="fs-5">
+                    <b>Roll No.:</b> {{rollno}}
+                    <input id="rollno" name="rollno" type="hidden" value={{rollno}} />
+                </p>
+                <p class="fs-5">
+                    <b>Branch:</b> {{branch}}
+                    <input id="branch" name="branch" type="hidden" value={{branch}} />
+                </p>
+                <p class="fs-5">
+                    <b>Contact:</b> {{contact}}
+                    <input id="contact" name="contact" type="hidden" value={{contact}} />
+                </p>
+                <button class="btn btn-primary">Mark Attendance</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

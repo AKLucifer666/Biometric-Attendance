@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mark Attendance
+{% endblock title %}
+
+{% block head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"
+    integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    #my_camera {
+        width: 320px;
+        height: 240px;
+        border: 1px solid black;
+    }
+</style>
+{% endblock head %}
+
+{% block body %}
+<form method="post" , action="/markAttendance">
+    {% csrf_token %}
+    <div class="container my-3">
+        <h1>Enter Your Roll Number:</h1>
+        <div class="mb-3">
+            <label for="rollno" class="form-label">Roll No.</label>
+            <input type="text" class="form-control" id="rollno" name="rollno">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control"
+                aria-labelledby="passwordHelpBlock">
+        </div>
+        <div id="my_camera"></div>
+        <input type=button value="Take Snapshot" class="btn btn-primary my-2" onClick="take_snapshot()">
+        <div id="results"></div>
+        <input id="base64" name="base64" type="hidden" value=""/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}
+
+{% block endbody %}
+<script type="text/javascript" src="webcamjs/webcam.min.js"></script>
+
+<!-- Configure a few settings and attach camera -->
+<script language="JavaScript">
+    Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+    Webcam.attach('#my_camera');
+
+    function take_snapshot() {
+
+        // take snapshot and get image data 
+        Webcam.snap(function (data_uri) {
+            // display results in page
+            document.getElementById("base64").value = data_uri;
+            document.getElementById('results').innerHTML =
+                '<img src="' + data_uri + '"/>';
+        });
+    }
+</script>
+{% endblock endbody %}

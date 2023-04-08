@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+Track Attendance
+{% endblock title %}
+
+{% block body %}
+
+<div class="container my-3">
+    <form method="post" action="/trackAttendance">
+        {% csrf_token %}
+        <label for="sel">Choose Date</label>
+        <select id="sel" name="sel" class="form-select mb-5" aria-label="Default select example">
+            <option selected>Select date</option>
+            {% for row in dates %}
+            <option value={{row}}>{{row}}</option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-primary" id="load">Filter</button>
+    </form>
+</div>
+<div class="container">
+    <table class="table" id="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Roll No.</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            {% if row.date == chosen %}
+            <tr>
+                <th scope="row">{{row.name}}</th>
+                <td>{{row.rollno}}</td>
+                <td>{{row.branch}}</td>
+                <td>{{row.date}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr> -->
+            <div class="table-content"></div>
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
